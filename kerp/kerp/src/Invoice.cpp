@@ -13,13 +13,13 @@
  #include <stdio.h>
 
  #include <qsqlquery.h>
- Invoice::Invoice()
- {
- }
  Invoice::Invoice(int id)
  {
  	QSqlQuery q;
-	char * idstr ;
+	char * idstr=new char ;
+
+	Invoice();
+
 	sprintf(idstr,"%d",id);
 	q.exec("select id,invoice_id,  customer_id from invoice where id = "+ QString::fromLatin1(idstr));;
 	if(q.next())
@@ -28,7 +28,20 @@
 		setCustomer_id(q.value(2).toString());
 		setInvoice_id(q.value(1).toString());
 	}
+	q.exec("select id from invoice_line where invoice_id= " +QString::fromLatin1(idstr) + " order by id;");
+	int i=0;
+	while (q.next())
+	{
+		lines[i++]= *(new InvoiceLine(q.value(0).toInt()));
+	}
 }
+Invoice::Invoice()
+ {
+ customer_id =QString::QString();
+ invoice_id =QString::QString();
+ lines[0]= *(new InvoiceLine());
+ }
+
 //Invoice::~Invoice()
 //{}
 void Invoice::setCustomer_id(QString aCustomer_id)
@@ -54,4 +67,8 @@ QString Invoice::getCustomer_id() const
 void Invoice::setId(int anId)
 {
 	id=anId;
+}
+QMap< int,InvoiceLine > Invoice::getLines()
+{
+	return lines;
 }
