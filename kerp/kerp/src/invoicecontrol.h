@@ -8,31 +8,34 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
-#ifndef _INVOICE_H_
-#define _INVOICE_H_
- #include <qstring.h>
-//#include   <qobject.h>
+ #ifndef _INVOICECONTROL_H_
+ #define _INVOICECONTROL_H_
 
- class Invoice //:public QObject
+ #include <qobject.h>
+ #include <qmap.h>
+
+#include "Invoice.h"
+
+ class InvoiceControl: public QObject
  {
- //	Q_OBJECT
+ 	Q_OBJECT
+typedef  QMap<int ,Invoice *>  InvoiceMap;
 
-	public :
-		Invoice() ;
-		Invoice(int);
-		//virtual ~Invoice();
-
-		QString getCustomer_id() const;
-		void setCustomer_id(QString);
-		void setId(int);
-		QString getInvoice_id() const;
-		void setInvoice_id(QString);
-
-		int getId() const;
-private:
-	QString customer_id;
-	QString invoice_id;
-	int id;
-
+public:
+	InvoiceControl();
+	virtual ~InvoiceControl();
+	Invoice *getCurrentInvoice();
+public slots:
+	void invoiceNext(Invoice*);
+	void invoicePrev();
+	void invoiceFirst();
+	void invoiceLast();
+	void invoiceNew();
+	void invoiceDelete();
+	void invoiceEdit();
+private :
+	InvoiceMap invoices;
+	InvoiceMap::Iterator iterator;
+	//void test1(int*);
 };
-#endif  //_INVOICE_H_
+#endif

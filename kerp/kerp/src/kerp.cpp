@@ -7,6 +7,7 @@
 
 #include "formcity.h"
 #include "invoiceview.h"
+#include "invoicecontrol.h"
 #include <qdragobject.h>
 #include <kprinter.h>
 #include <qpainter.h>
@@ -153,10 +154,12 @@ void kerp::city_action()
 
 void kerp::invoice_action()
 {
-	Invoice *invoice= new Invoice(1);
+	//Invoice *invoice= new Invoice(1);
+	InvoiceControl *invoicecontrol= new InvoiceControl();
 
 	InvoiceView *form= new InvoiceView();
-	form->setInvoice(invoice);
+	connect(form,SIGNAL(NextRequested(Invoice*)),invoicecontrol,SLOT(invoiceNext(Invoice *)));
+	form->setInvoice(invoicecontrol->getCurrentInvoice());
 	form->show();
 }
 

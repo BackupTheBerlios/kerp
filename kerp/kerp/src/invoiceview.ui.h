@@ -9,9 +9,14 @@
 void InvoiceView::init()
 {
     int width = table->width();
- table->setColumnWidth(0,width/4);
- table->setColumnWidth(1,width/2);
-table->setColumnReadOnly(1,true);
+    table->setColumnWidth(0,width/4);
+    table->setColumnWidth(1,width/2);
+    table->setColumnReadOnly(1,true);
+    kLEInvoiceId->setEnabled(false);
+    kLEPartnerId->setEnabled(false);
+    table->setEnabled(false);
+    invoice = new Invoice();
+     
 }
 
 
@@ -64,8 +69,40 @@ void InvoiceView::invoiceChanged( Invoice * invoice )
 
 void InvoiceView::setInvoice( Invoice *inv )
 {
-    invoice =  inv;   
+ //   invoice =  inv;   
     kLEPartnerId->setText(inv->getCustomer_id());
-    kLEInvoiceId->setText(inv->getInvoice_id());
-    
+    kLEInvoiceId->setText(inv->getInvoice_id());   
+}
+
+
+void InvoiceView::nextClicked()
+{
+ 
+    kdDebug()<<"going to emit"<<endl;
+   Invoice * inv=new Invoice();
+    emit NextRequested(inv);
+     kdDebug()<<"signal emited ! "<<endl;     
+    kdDebug()<<"signal emited the invoice is "<<inv->getCustomer_id()<<endl;
+    setInvoice (inv);
+
+	
+}
+
+
+
+void InvoiceView::prevClicked()
+{
+    emit PrevRequested();
+}
+
+
+void InvoiceView::firstClicked()
+{
+    emit FirstRequested();
+}
+
+
+void InvoiceView::lastClicked()
+{
+    emit LastRequested();
 }

@@ -13,6 +13,9 @@
  #include <stdio.h>
 
  #include <qsqlquery.h>
+ Invoice::Invoice()
+ {
+ }
  Invoice::Invoice(int id)
  {
  	QSqlQuery q;
@@ -26,8 +29,8 @@
 		setInvoice_id(q.value(1).toString());
 	}
 }
-Invoice::~Invoice()
-{}
+//Invoice::~Invoice()
+//{}
 void Invoice::setCustomer_id(QString aCustomer_id)
 {
 	customer_id=aCustomer_id;
