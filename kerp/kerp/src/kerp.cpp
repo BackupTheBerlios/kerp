@@ -5,11 +5,13 @@
 #include "kerp.h"
 #include "pref.h"
 
-//#include "formcity.h"
+#include "formcity.h"
 #include "invoiceview.h"
 #include "invoicecontrol.h"
 #include "invoiceline.h"
 #include "global.h"
+#include "partnerform.h"
+
 #include <qdragobject.h>
 #include <kprinter.h>
 #include <qpainter.h>
@@ -83,7 +85,7 @@ bool kerp::createConnection()
         return FALSE;
     }
     defaultDB->setDatabaseName( "qtdb" );
-    defaultDB->setUserName( "ab" );
+    defaultDB->setUserName( "postgres" );
     defaultDB->setPassword( " " );
     defaultDB->setHostName( "localhost" );
     if ( ! defaultDB->open() ) {
@@ -147,6 +149,11 @@ void kerp::setupActions()
     KAction *invoice_action=new KAction(i18n("&Invoice"),0,
     					this,SLOT(invoice_action()),
 					actionCollection(),"invoice_action");
+
+    KAction * partner_action = new KAction(i18n("&Partner"),0,
+    									this,SLOT( partner_action()),
+    									actionCollection(),"partner_action");
+
     createGUI();
 }
 //My menu actions
@@ -155,6 +162,12 @@ void kerp::city_action()
 {
 
 	FormCity *form= new FormCity();
+	form->show();
+}
+
+void kerp::partner_action()
+{
+	PartnerForm *form = new  PartnerForm();
 	form->show();
 }
 

@@ -38,6 +38,18 @@ InvoiceLine::InvoiceLine(int id)
 		productName = q.value(8).toString();
   	}
 }
+InvoiceLine::InvoiceLine(int aPrice, int aQuantity,float aDiscount,float aTax,  QString aProduct="", int aInvoiceId=0, int aProductId=0)
+{
+	QSqlQuery q;
+	InvoiceLine();
+	price = aPrice;
+	quantity=aQuantity;
+	discount= aDiscount;
+	product = aProduct;
+	q.exec("select id from product where product_id = '"+aProduct+"';");
+	if (q.next())
+		productId=q.value(0).toInt();
+}
 
 InvoiceLine::~InvoiceLine() {}
 

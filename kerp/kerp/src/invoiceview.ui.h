@@ -18,7 +18,7 @@ void InvoiceView::init()
     invoice = new Invoice();
     TableKeys *keyFilter= new TableKeys();
     table->installEventFilter(keyFilter);
-     
+
 }
 
 
@@ -53,6 +53,7 @@ void InvoiceView::tableValueChanged( int row, int col )
 	    {
 		table->setText(row,1,tmpQ.value(0).toString());
 		table->setText(row,2,tmpQ.value(1).toString());
+		table->editCell(row,3);
 	    }
 	    break;
 	default:
@@ -153,8 +154,6 @@ kPBGoPrev->setEnabled(!b);
 kPBDelete->setEnabled(!b);
 kPBSave->setEnabled(b);
 }
-
-
 void InvoiceView::newClicked()
 {
     enableEditing(true);
@@ -162,3 +161,20 @@ void InvoiceView::newClicked()
     setInvoice();
 }
 
+
+void InvoiceView::saveClicked()
+{
+    kdDebug()<<"save action"<<endl;
+    invoice->setCustomer_id(kLEPartnerId->text());
+    invoice->setInvoice_id(Global::toString(0));
+    invoice->setDate(kRLEDate->text());
+    for (int i =0; i< table->numRows();i++)
+    {
+
+	InvoiceLine * il = new InvoiceLine (table->text(i,2).toInt() , table->text(i,3).toInt(), table->text(i,5).toFloat(), table->text(i,6).toFloat(), table->text(i,0) );
+	kdDebug()<<"line added"<<endl;
+
+	invoice->addInvoiceLine(il);
+    }
+    invoice->save();
+}

@@ -85,6 +85,7 @@ private slots:
 
     void city_action();
     void invoice_action();
+    void partner_action();
 private:
     void setupAccel();
     void setupActions();

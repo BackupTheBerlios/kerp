@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>648</width>
-            <height>627</height>
+            <width>645</width>
+            <height>639</height>
         </rect>
     </property>
     <property name="caption">
@@ -121,7 +121,7 @@
         </widget>
         <widget class="KRestrictedLine" row="0" column="3">
             <property name="name">
-                <cstring>kRestrictedLineDate</cstring>
+                <cstring>kRLEDate</cstring>
             </property>
             <property name="maxLength">
                 <number>10</number>
@@ -288,6 +288,11 @@
                     <string>Tax%</string>
                 </property>
             </column>
+            <row>
+                <property name="text">
+                    <string>0</string>
+                </property>
+            </row>
             <property name="name">
                 <cstring>table</cstring>
             </property>
@@ -301,7 +306,7 @@
                 <enum>AutoOneFit</enum>
             </property>
             <property name="numRows">
-                <number>0</number>
+                <number>1</number>
             </property>
             <property name="numCols">
                 <number>7</number>
@@ -410,6 +415,12 @@
         <receiver>InvoiceView</receiver>
         <slot>newClicked()</slot>
     </connection>
+    <connection>
+        <sender>kPBSave</sender>
+        <signal>clicked()</signal>
+        <receiver>InvoiceView</receiver>
+        <slot>saveClicked()</slot>
+    </connection>
 </connections>
 <includes>
     <include location="global" impldecl="in declaration">qsqlquery.h</include>
@@ -419,6 +430,7 @@
     <include location="local" impldecl="in declaration">global.h</include>
     <include location="global" impldecl="in declaration">qevent.h</include>
     <include location="local" impldecl="in declaration">tablekeyfilter.h</include>
+    <include location="local" impldecl="in declaration">invoiceline.h</include>
     <include location="local" impldecl="in implementation">invoiceview.ui.h</include>
 </includes>
 <variables>
@@ -446,6 +458,7 @@
     <slot>firstClicked()</slot>
     <slot>lastClicked()</slot>
     <slot>newClicked()</slot>
+    <slot>saveClicked()</slot>
 </slots>
 <functions>
     <function access="private" specifier="non virtual">init()</function>

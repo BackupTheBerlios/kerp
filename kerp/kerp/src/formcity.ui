@@ -1,0 +1,180 @@
+<!DOCTYPE UI><UI version="3.1" stdsetdef="1">
+<class>FormCity</class>
+<widget class="QDialog">
+    <property name="name">
+        <cstring>FormCity</cstring>
+    </property>
+    <property name="geometry">
+        <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>280</width>
+            <height>244</height>
+        </rect>
+    </property>
+    <property name="sizePolicy">
+        <sizepolicy>
+            <hsizetype>5</hsizetype>
+            <vsizetype>5</vsizetype>
+            <horstretch>2</horstretch>
+            <verstretch>3</verstretch>
+        </sizepolicy>
+    </property>
+    <property name="caption">
+        <string>City</string>
+    </property>
+    <property name="sizeGripEnabled">
+        <bool>false</bool>
+    </property>
+    <vbox>
+        <property name="name">
+            <cstring>unnamed</cstring>
+        </property>
+        <widget class="QSplitter">
+            <property name="name">
+                <cstring>splitter3</cstring>
+            </property>
+            <property name="sizePolicy">
+                <sizepolicy>
+                    <hsizetype>5</hsizetype>
+                    <vsizetype>7</vsizetype>
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                </sizepolicy>
+            </property>
+            <property name="orientation">
+                <enum>Vertical</enum>
+            </property>
+            <widget class="QDataTable">
+                <column>
+                    <property name="text">
+                        <string>Province</string>
+                    </property>
+                    <property name="field">
+                        <string>name</string>
+                    </property>
+                </column>
+                <property name="name">
+                    <cstring>dataTableProvince</cstring>
+                </property>
+                <property name="sorting">
+                    <bool>true</bool>
+                </property>
+                <property name="confirmInsert">
+                    <bool>true</bool>
+                </property>
+                <property name="confirmUpdate">
+                    <bool>true</bool>
+                </property>
+                <property name="confirmDelete">
+                    <bool>true</bool>
+                </property>
+                <property name="confirmCancels">
+                    <bool>true</bool>
+                </property>
+                <property name="sort">
+                    <stringlist>
+                        <string>name ASC</string>
+                    </stringlist>
+                </property>
+                <property name="database" stdset="0">
+                    <stringlist>
+                        <string>(default)</string>
+                        <string>province</string>
+                    </stringlist>
+                </property>
+            </widget>
+            <widget class="QDataTable">
+                <column>
+                    <property name="text">
+                        <string>City</string>
+                    </property>
+                    <property name="field">
+                        <string>name</string>
+                    </property>
+                </column>
+                <property name="name">
+                    <cstring>dataTableCity</cstring>
+                </property>
+                <property name="sorting">
+                    <bool>true</bool>
+                </property>
+                <property name="confirmInsert">
+                    <bool>true</bool>
+                </property>
+                <property name="confirmUpdate">
+                    <bool>true</bool>
+                </property>
+                <property name="confirmDelete">
+                    <bool>true</bool>
+                </property>
+                <property name="confirmCancels">
+                    <bool>true</bool>
+                </property>
+                <property name="sort">
+                    <stringlist>
+                        <string>name ASC</string>
+                    </stringlist>
+                </property>
+                <property name="database" stdset="0">
+                    <stringlist>
+                        <string>(default)</string>
+                        <string>city</string>
+                    </stringlist>
+                </property>
+            </widget>
+        </widget>
+        <widget class="KPushButton">
+            <property name="name">
+                <cstring>kPushButton1</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Quit</string>
+            </property>
+        </widget>
+    </vbox>
+</widget>
+<connections>
+    <connection>
+        <sender>dataTableProvince</sender>
+        <signal>currentChanged(QSqlRecord*)</signal>
+        <receiver>FormCity</receiver>
+        <slot>provinceChanged(QSqlRecord*)</slot>
+    </connection>
+    <connection>
+        <sender>dataTableProvince</sender>
+        <signal>primeInsert(QSqlRecord*)</signal>
+        <receiver>FormCity</receiver>
+        <slot>primeInsertProvince(QSqlRecord*)</slot>
+    </connection>
+    <connection>
+        <sender>dataTableCity</sender>
+        <signal>primeInsert(QSqlRecord*)</signal>
+        <receiver>FormCity</receiver>
+        <slot>primeInsertCity(QSqlRecord*)</slot>
+    </connection>
+    <connection>
+        <sender>kPushButton1</sender>
+        <signal>clicked()</signal>
+        <receiver>FormCity</receiver>
+        <slot>close()</slot>
+    </connection>
+</connections>
+<includes>
+    <include location="global" impldecl="in declaration">qsqlrecord.h</include>
+    <include location="local" impldecl="in implementation">formcity.ui.h</include>
+</includes>
+<variables>
+    <variable access="private">QVariant province_id;</variable>
+</variables>
+<slots>
+    <slot>provinceChanged( QSqlRecord * buffer )</slot>
+    <slot>primeInsertProvince( QSqlRecord * buffer )</slot>
+    <slot>primeInsertCity( QSqlRecord * buffer )</slot>
+</slots>
+<pixmapinproject/>
+<layoutdefaults spacing="6" margin="9"/>
+<includehints>
+    <includehint>kpushbutton.h</includehint>
+</includehints>
+</UI>

@@ -31,7 +31,10 @@
 		void setId(int);
 		QString getInvoice_id() const;
 		void setInvoice_id(QString);
-
+		void addInvoiceLine(InvoiceLine* il);
+		void save();
+		void setDate(QString);
+		QString getDate();
 		QMap< int,InvoiceLine > getLines();
 
 		int getId() const;
@@ -39,6 +42,7 @@ private:
 	InvoiceLineMap lines;
 	QString customer_id;
 	QString invoice_id;
+	QString invoice_date;
 	int id;
 
 };

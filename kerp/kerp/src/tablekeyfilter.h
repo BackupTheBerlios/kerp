@@ -10,6 +10,7 @@
 
 #ifndef _TABLEKEYFILTER_H_
  #include <qobject.h>
+ #include <qtable.h>
 
  class TableKeys : public QObject
  {

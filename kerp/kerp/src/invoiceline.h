@@ -27,6 +27,7 @@ class InvoiceLine
 
 	public:
 	InvoiceLine();
+	InvoiceLine(int price, int quantity,float discount,float tax,  QString product="", int invoiceId=0, int productId=0);
 	InvoiceLine(int id);
 	~InvoiceLine();
 

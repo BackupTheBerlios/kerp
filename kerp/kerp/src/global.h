@@ -7,5 +7,6 @@ class Global
 {
 	public:
 	 static QString toString(int);
+	 static QString toString(float);
 };
 #endif
