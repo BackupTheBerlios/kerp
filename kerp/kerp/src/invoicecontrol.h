@@ -24,18 +24,18 @@ typedef  QMap<int ,Invoice *>  InvoiceMap;
 public:
 	InvoiceControl();
 	virtual ~InvoiceControl();
-	Invoice *getCurrentInvoice();
+	Invoice getCurrentInvoice();
 public slots:
 	void invoiceNext(Invoice*);
-	void invoicePrev();
-	void invoiceFirst();
-	void invoiceLast();
+	void invoicePrev(Invoice*);
+	void invoiceFirst(Invoice*);
+	void invoiceLast(Invoice*);
 	void invoiceNew();
 	void invoiceDelete();
 	void invoiceEdit();
 private :
 	InvoiceMap invoices;
 	InvoiceMap::Iterator iterator;
-	//void test1(int*);
+	void test1(int*);
 };
 #endif

@@ -9,11 +9,11 @@
  ***************************************************************************/
  #include "invoicecontrol.h"
 #include <qsqlquery.h>
-//#include <kdebug.h>
-//void InvoiceControl::test1(int * q){
-//	*q = 8;
-//	kdDebug()<<"qu is : "<<*q<<endl;
-//	}
+#include <kdebug.h>
+void InvoiceControl::test1(int * q){
+	*q = 8;
+	//kdDebug()<<"qu is : "<<*q<<endl;
+	}
 
  InvoiceControl::InvoiceControl()
  {
@@ -21,51 +21,81 @@
 
  	QSqlQuery q;
 	//kdDebug()<<"instantiating invoicecontrol"<<endl;
-//	int *v;
-//	*v=7;
+	int *v=new int;
+	*v=7;
 	//kdDebug()<<"going to call test1"<<endl;
-//	test1(v);
-	//kdDebug()<<"vi is  : "<<endl;
+	test1(v);
+	//kdDebug()<<"vi is  : "<<*v<<endl;
 	q.exec("select id from invoice order by id");
-//	kdDebug()<<"vi is  : "<<endl;
+	//kdDebug()<<"vi is  : "<<endl;
 	int i=0;
 
 	while (q.next())
 	{
 		ids=q.value(0).toInt();
-		//kdDebug()<<"Invoice going to be added"<<endl;
-		Invoice *invoice= new Invoice(ids);
-		invoices[i++] = invoice;
-		//kdDebug()<<"Invoice created"<<endl;
-		//invoices[i++]= invoice;
+		//kdDebug()<<"Invoice going to be added"<<ids<<endl;
 
-		//kdDebug()<<"Invoice added invoice:"+invoice->getCustomer_id()<<endl;
+		Invoice * invo= new Invoice(ids);
+		//kdDebug()<<"Invoice created"<<endl;
+
+		//invoices[i++] = invoice;
+		//kdDebug()<<"Invoice created"<<endl;
+		invoices[i++]= invo;
+
+		//kdDebug()<<"Invoice added invoice:"+invo->getCustomer_id()<<endl;
 	}
 
 
 	iterator = invoices.begin();
-//	kdDebug()<<"iterator created"<<endl;
+	//kdDebug()<<"iterator created"<<endl;
 	//iterator++;
 	//kdDebug()<<"Iterattor's key is:"<<iterator.data()->getCustomer_id()<<endl;
 }
 InvoiceControl::~ InvoiceControl()
 {}
-Invoice * InvoiceControl::getCurrentInvoice(){
-	return iterator.data();
+Invoice  InvoiceControl::getCurrentInvoice(){
+	return *iterator.data();
 }
 
 void InvoiceControl::invoiceNext(Invoice * inv)
 {
 	iterator++;
-//	kdDebug()<<"SLOT invoked!"<<endl;
+	if(iterator!=invoices.end())
+	{
+
+	//kdDebug()<<"SLOT invoked!"<<endl;
 	*inv = *iterator.data();
-//	kdDebug()<<"inv is : "<<inv->getCustomer_id()<<endl;
+	//kdDebug()<<"inv is : "<<inv->getCustomer_id()<<endl;
+	}
+}
+void InvoiceControl::invoicePrev(Invoice * inv)
+{
+	if(iterator != invoices.begin())
+	{
+		kdDebug()<<"returning prev invoice"<<endl;
+		iterator--;
+		kdDebug()<<"return :"<<iterator.data()->getCustomer_id()<<endl;
+		*inv=*iterator.data();
+	}
+}
+
+
+void InvoiceControl::invoiceFirst(Invoice *inv)
+{
+iterator=invoices.begin();
+	kdDebug()<<"return :"<<invoices.begin().data()->getCustomer_id()<<endl;
+*inv=*iterator.data();
 
 }
+void InvoiceControl::invoiceLast(Invoice * inv)
+{
+	iterator=invoices.end();
+	iterator--;
+	kdDebug()<<"return :"<<invoices[1]->getCustomer_id()<<endl;
+	*inv = * iterator.data();
+}
+
+void InvoiceControl::invoiceNew(){}
 void InvoiceControl::invoiceDelete(){}
 void InvoiceControl::invoiceEdit(){}
-void InvoiceControl::invoiceFirst(){}
-void InvoiceControl::invoiceLast(){}
-void InvoiceControl::invoiceNew(){}
-void InvoiceControl::invoicePrev(){}
 

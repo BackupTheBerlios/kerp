@@ -5,9 +5,11 @@
 #include "kerp.h"
 #include "pref.h"
 
-#include "formcity.h"
+//#include "formcity.h"
 #include "invoiceview.h"
 #include "invoicecontrol.h"
+#include "invoiceline.h"
+#include "global.h"
 #include <qdragobject.h>
 #include <kprinter.h>
 #include <qpainter.h>
@@ -61,7 +63,11 @@ kerp::kerp()
     connect(m_view, SIGNAL(signalChangeCaption(const QString&)),
             this,   SLOT(changeCaption(const QString&)));
     createConnection();
-
+	kdDebug()<<"going to create il"<<endl;
+	kdDebug()<<"testing global to string 7"<<Global::toString(7)<<endl;
+	InvoiceLine *il=new InvoiceLine(1);
+	kdDebug()<<"out the if "<<endl;
+	kdDebug()<<"il created :"<< il->getProduct();
 }
 
 kerp::~kerp()
@@ -77,9 +83,9 @@ bool kerp::createConnection()
         return FALSE;
     }
     defaultDB->setDatabaseName( "qtdb" );
-    defaultDB->setUserName( "postgres" );
+    defaultDB->setUserName( "ab" );
     defaultDB->setPassword( " " );
-    defaultDB->setHostName( "laico" );
+    defaultDB->setHostName( "localhost" );
     if ( ! defaultDB->open() ) {
         qWarning( "Failed to open database: " +
                   defaultDB->lastError().driverText() );
@@ -148,17 +154,22 @@ void kerp::setupActions()
 void kerp::city_action()
 {
 
-	FormCity *form= new FormCity();
-	form->show();
+	//FormCity *form= new FormCity();
+	//form->show();
 }
 
 void kerp::invoice_action()
 {
-	//Invoice *invoice= new Invoice(1);
+//kdDebug()<<"salam"<<endl;
+	//Invoice * invoice= new Invoice(1);
+ //kdDebug();
 	InvoiceControl *invoicecontrol= new InvoiceControl();
-
+	//kdDebug()<<"salam"<<endl;
 	InvoiceView *form= new InvoiceView();
 	connect(form,SIGNAL(NextRequested(Invoice*)),invoicecontrol,SLOT(invoiceNext(Invoice *)));
+	connect(form,SIGNAL(PrevRequested(Invoice*)),invoicecontrol,SLOT(invoicePrev(Invoice *)));
+	connect(form,SIGNAL(FirstRequested(Invoice*)),invoicecontrol,SLOT(invoiceFirst(Invoice*)));
+	connect(form,SIGNAL(LastRequested(Invoice*)),invoicecontrol,SLOT(invoiceLast(Invoice*)));
 	form->setInvoice(invoicecontrol->getCurrentInvoice());
 	form->show();
 }

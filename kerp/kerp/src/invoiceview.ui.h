@@ -14,7 +14,7 @@ void InvoiceView::init()
     table->setColumnReadOnly(1,true);
     kLEInvoiceId->setEnabled(false);
     kLEPartnerId->setEnabled(false);
-    table->setEnabled(false);
+ //  table->setEnabled(false);
     invoice = new Invoice();
      
 }
@@ -67,23 +67,22 @@ void InvoiceView::invoiceChanged( Invoice * invoice )
 }
 
 
-void InvoiceView::setInvoice( Invoice *inv )
+void InvoiceView::setInvoice( Invoice inv )
 {
- //   invoice =  inv;   
-    kLEPartnerId->setText(inv->getCustomer_id());
-    kLEInvoiceId->setText(inv->getInvoice_id());   
+    *invoice =  inv;   
+    setInvoice();
 }
 
 
 void InvoiceView::nextClicked()
 {
  
-    kdDebug()<<"going to emit"<<endl;
-   Invoice * inv=new Invoice();
-    emit NextRequested(inv);
-     kdDebug()<<"signal emited ! "<<endl;     
-    kdDebug()<<"signal emited the invoice is "<<inv->getCustomer_id()<<endl;
-    setInvoice (inv);
+ //   kdDebug()<<"going to emit"<<endl;
+   //Invoice * inv=new Invoice();
+    emit NextRequested(invoice);
+   //  kdDebug()<<"signal emited ! "<<endl;     
+    //kdDebug()<<"signal emited the invoice is "<<inv->getCustomer_id()<<endl;
+    setInvoice ();
 
 	
 }
@@ -92,17 +91,72 @@ void InvoiceView::nextClicked()
 
 void InvoiceView::prevClicked()
 {
-    emit PrevRequested();
+    kdDebug()<<"emiting prevClicked"<<endl;
+    emit PrevRequested(invoice);
+    kdDebug()<<"invoice returned is :"<<invoice->getCustomer_id()<<endl;
+    setInvoice();
 }
 
 
 void InvoiceView::firstClicked()
 {
-    emit FirstRequested();
+    emit FirstRequested(invoice);
+    setInvoice();
 }
 
 
 void InvoiceView::lastClicked()
 {
-    emit LastRequested();
+    emit LastRequested(invoice);
+    setInvoice();
 }
+
+
+void InvoiceView::setInvoice()
+{
+    kLEPartnerId->setText(invoice->getCustomer_id());
+    kLEInvoiceId->setText(invoice->getInvoice_id());  
+    table->setNumRows(0);
+    //populate table
+    lines = invoice->getLines();
+    kdDebug()<<"get lines done"<<endl;
+    iterator=lines.begin();
+    int i = 0;
+    InvoiceLine il;
+    while (iterator != lines.end())
+    {
+	il = iterator.data();
+	kdDebug()<<il.getProduct()<<endl;
+	table->setNumRows(table->numRows()+1);
+	table->setText(i,0,il.getProduct());
+	table->setText(i,1,il.getProductName());
+	table->setText(i,2,Global::toString(il.getPrice()));
+	table->setText(i,3,Global::toString(il.getQuantity()));
+	table->setText(i,4,Global::toString(table->text(i,3).toInt() *  table->text(i,2).toInt()));
+		       
+	iterator++;
+	i++;
+    }
+    
+}
+
+void InvoiceView::enableEditing( bool b )
+{
+kLEPartnerId->setEnabled(b);
+table->setEnabled(b);
+kPBGoFirst->setEnabled(!b);
+kPBGoLast->setEnabled(!b);
+kPBGoNext->setEnabled(!b);
+kPBGoPrev->setEnabled(!b);
+kPBDelete->setEnabled(!b);
+kPBSave->setEnabled(b);
+}
+
+
+void InvoiceView::newClicked()
+{
+    enableEditing(true);
+    invoice=new Invoice();
+    setInvoice();
+}
+

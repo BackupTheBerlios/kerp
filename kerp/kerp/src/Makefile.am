@@ -14,7 +14,7 @@ kerp_LDFLAGS = $(KDE_RPATH) $(all_libraries)
 kerp_LDADD   = $(LIB_KFILE) $(LIB_KDEPRINT)
 
 # which sources should be compiled for kerp
-kerp_SOURCES = main.cpp kerp.cpp kerpview.cpp pref.cpp kerpiface.skel formcity.ui invoiceview.ui test.ui Invoice.h Invoice.cpp invoicecontrol.cpp invoicecontrol.h
+kerp_SOURCES = main.cpp kerp.cpp kerpview.cpp pref.cpp kerpiface.skel Invoice.h Invoice.cpp invoicecontrol.cpp invoicecontrol.h invoiceview.ui.h invoiceline.h invoiceline.cpp global.h global.cpp mtable.h mtable.cpp invoiceview.cpp invoiceview.h
 
 # these are the headers for your project
 noinst_HEADERS = kerp.h kerpview.h pref.h

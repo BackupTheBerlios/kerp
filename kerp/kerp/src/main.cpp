@@ -9,10 +9,14 @@
 #include <kcmdlineargs.h>
 #include <klocale.h>
 
-static const char *description =
-    I18N_NOOP("A KDE Application");
+#include <qstring.h>
 
-static const char *version = "0.1";
+#include <stdio.h>
+
+static const char *description =
+    I18N_NOOP("A KDE ERP Application");
+
+static const char *version = "0.01";
 
 static KCmdLineOptions options[] =
 {

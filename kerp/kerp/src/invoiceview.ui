@@ -8,397 +8,359 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>772</width>
-            <height>654</height>
+            <width>648</width>
+            <height>627</height>
         </rect>
     </property>
     <property name="caption">
         <string>Invoice</string>
     </property>
-    <widget class="QLabel">
+    <grid>
         <property name="name">
-            <cstring>textLabel1</cstring>
+            <cstring>unnamed</cstring>
         </property>
-        <property name="geometry">
-            <rect>
-                <x>11</x>
-                <y>11</y>
-                <width>65</width>
-                <height>26</height>
-            </rect>
-        </property>
-        <property name="frameShape">
-            <enum>NoFrame</enum>
-        </property>
-        <property name="frameShadow">
-            <enum>Plain</enum>
-        </property>
-        <property name="text">
-            <string>&amp;InvoiceId:</string>
-        </property>
-        <property name="buddy" stdset="0">
-            <cstring>kLEInvoiceId</cstring>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabel3</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>11</x>
-                <y>43</y>
-                <width>65</width>
-                <height>26</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>&amp;Partner:</string>
-        </property>
-        <property name="buddy" stdset="0">
-            <cstring>kLEPartnerId</cstring>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabel2</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>405</x>
-                <y>11</y>
-                <width>34</width>
-                <height>26</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>&amp;Date</string>
-        </property>
-        <property name="buddy" stdset="0">
-            <cstring>kRestrictedLineDate</cstring>
-        </property>
-    </widget>
-    <widget class="KLineEdit">
-        <property name="name">
-            <cstring>kLEInvoiceId</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>82</x>
-                <y>11</y>
-                <width>317</width>
-                <height>26</height>
-            </rect>
-        </property>
-    </widget>
-    <widget class="KRestrictedLine">
-        <property name="name">
-            <cstring>kRestrictedLineDate</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>445</x>
-                <y>11</y>
-                <width>316</width>
-                <height>26</height>
-            </rect>
-        </property>
-        <property name="maxLength">
-            <number>10</number>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabelPartner</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>405</x>
-                <y>43</y>
-                <width>356</width>
-                <height>26</height>
-            </rect>
-        </property>
-        <property name="frameShape">
-            <enum>Panel</enum>
-        </property>
-        <property name="frameShadow">
-            <enum>Raised</enum>
-        </property>
-        <property name="text">
-            <string></string>
-        </property>
-    </widget>
-    <widget class="KLineEdit">
-        <property name="name">
-            <cstring>kLEPartnerId</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>82</x>
-                <y>43</y>
-                <width>317</width>
-                <height>26</height>
-            </rect>
-        </property>
-    </widget>
-    <widget class="QLayoutWidget">
-        <property name="name">
-            <cstring>layout1</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>10</x>
-                <y>600</y>
-                <width>750</width>
-                <height>38</height>
-            </rect>
-        </property>
-        <hbox>
+        <widget class="QLayoutWidget" row="5" column="0" rowspan="1" colspan="4">
             <property name="name">
-                <cstring>unnamed</cstring>
+                <cstring>layout1</cstring>
+            </property>
+            <hbox>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <property name="margin">
+                    <number>2</number>
+                </property>
+                <property name="spacing">
+                    <number>13</number>
+                </property>
+                <widget class="KPushButton">
+                    <property name="name">
+                        <cstring>kPBGoFirst</cstring>
+                    </property>
+                    <property name="sizePolicy">
+                        <sizepolicy>
+                            <hsizetype>1</hsizetype>
+                            <vsizetype>1</vsizetype>
+                            <horstretch>0</horstretch>
+                            <verstretch>249</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="text">
+                        <string>&amp;&lt;&lt;</string>
+                    </property>
+                </widget>
+                <widget class="KPushButton">
+                    <property name="name">
+                        <cstring>kPBGoPrev</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;&lt;</string>
+                    </property>
+                </widget>
+                <widget class="KPushButton">
+                    <property name="name">
+                        <cstring>kPBGoNext</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;&gt;</string>
+                    </property>
+                </widget>
+                <widget class="KPushButton">
+                    <property name="name">
+                        <cstring>kPBGoLast</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&gt;&amp;&gt;</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+        <widget class="QLabel" row="0" column="0">
+            <property name="name">
+                <cstring>textLabel1</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>NoFrame</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Plain</enum>
+            </property>
+            <property name="text">
+                <string>&amp;InvoiceId:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>kLEInvoiceId</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="0">
+            <property name="name">
+                <cstring>textLabel3</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Partner:</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>kLEPartnerId</cstring>
+            </property>
+        </widget>
+        <widget class="QLabel" row="0" column="2">
+            <property name="name">
+                <cstring>textLabel2</cstring>
+            </property>
+            <property name="text">
+                <string>&amp;Date</string>
+            </property>
+            <property name="buddy" stdset="0">
+                <cstring>kRestrictedLineDate</cstring>
+            </property>
+        </widget>
+        <widget class="KLineEdit" row="0" column="1">
+            <property name="name">
+                <cstring>kLEInvoiceId</cstring>
+            </property>
+        </widget>
+        <widget class="KRestrictedLine" row="0" column="3">
+            <property name="name">
+                <cstring>kRestrictedLineDate</cstring>
+            </property>
+            <property name="maxLength">
+                <number>10</number>
+            </property>
+        </widget>
+        <widget class="QLabel" row="1" column="2" rowspan="1" colspan="2">
+            <property name="name">
+                <cstring>textLabelPartner</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>Panel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Raised</enum>
+            </property>
+            <property name="text">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="QLayoutWidget" row="3" column="0" rowspan="1" colspan="4">
+            <property name="name">
+                <cstring>layout8</cstring>
+            </property>
+            <grid>
+                <property name="name">
+                    <cstring>unnamed</cstring>
+                </property>
+                <widget class="KTextEdit" row="0" column="1" rowspan="2" colspan="1">
+                    <property name="name">
+                        <cstring>kTEDescription</cstring>
+                    </property>
+                </widget>
+                <widget class="QLayoutWidget" row="0" column="0">
+                    <property name="name">
+                        <cstring>layout3</cstring>
+                    </property>
+                    <hbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel3_2</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>0</hsizetype>
+                                    <vsizetype>5</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>14</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>Sum:</string>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel4</cstring>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>14</pointsize>
+                                </font>
+                            </property>
+                            <property name="frameShape">
+                                <enum>Panel</enum>
+                            </property>
+                            <property name="frameShadow">
+                                <enum>Raised</enum>
+                            </property>
+                            <property name="text">
+                                <string></string>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel5</cstring>
+                            </property>
+                            <property name="sizePolicy">
+                                <sizepolicy>
+                                    <hsizetype>0</hsizetype>
+                                    <vsizetype>5</vsizetype>
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="font">
+                                <font>
+                                    <pointsize>14</pointsize>
+                                </font>
+                            </property>
+                            <property name="text">
+                                <string>Description:</string>
+                            </property>
+                        </widget>
+                    </hbox>
+                </widget>
+                <spacer row="1" column="0">
+                    <property name="name">
+                        <cstring>spacer1</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Fixed</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>350</width>
+                            <height>150</height>
+                        </size>
+                    </property>
+                </spacer>
+            </grid>
+        </widget>
+        <widget class="KLineEdit" row="1" column="1">
+            <property name="name">
+                <cstring>kLEPartnerId</cstring>
+            </property>
+        </widget>
+        <widget class="QTable" row="2" column="0" rowspan="1" colspan="4">
+            <column>
+                <property name="text">
+                    <string>Pid</string>
+                </property>
+                <property name="pixmap">
+                    <pixmap>image0</pixmap>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Name</string>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>price</string>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Quantity</string>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>sumePrice</string>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Discount%</string>
+                </property>
+            </column>
+            <column>
+                <property name="text">
+                    <string>Tax%</string>
+                </property>
+            </column>
+            <property name="name">
+                <cstring>table</cstring>
             </property>
             <property name="margin">
                 <number>2</number>
             </property>
-            <property name="spacing">
-                <number>13</number>
+            <property name="midLineWidth">
+                <number>3</number>
             </property>
-            <widget class="KPushButton">
-                <property name="name">
-                    <cstring>kPBGoFirst</cstring>
-                </property>
-                <property name="sizePolicy">
-                    <sizepolicy>
-                        <hsizetype>1</hsizetype>
-                        <vsizetype>1</vsizetype>
-                        <horstretch>0</horstretch>
-                        <verstretch>249</verstretch>
-                    </sizepolicy>
-                </property>
-                <property name="text">
-                    <string>&amp;&lt;&lt;</string>
-                </property>
-            </widget>
-            <widget class="KPushButton">
-                <property name="name">
-                    <cstring>kPBGoPrev</cstring>
-                </property>
-                <property name="text">
-                    <string>&amp;&lt;</string>
-                </property>
-            </widget>
-            <widget class="KPushButton">
-                <property name="name">
-                    <cstring>kPBGoNext</cstring>
-                </property>
-                <property name="text">
-                    <string>&amp;&gt;</string>
-                </property>
-            </widget>
-            <widget class="KPushButton">
-                <property name="name">
-                    <cstring>kPBGoLast</cstring>
-                </property>
-                <property name="text">
-                    <string>&gt;&amp;&gt;</string>
-                </property>
-            </widget>
-        </hbox>
-    </widget>
-    <widget class="QTable">
-        <column>
-            <property name="text">
-                <string>Pid</string>
+            <property name="resizePolicy">
+                <enum>AutoOneFit</enum>
             </property>
-            <property name="pixmap">
-                <pixmap>image0</pixmap>
+            <property name="numRows">
+                <number>0</number>
             </property>
-        </column>
-        <column>
-            <property name="text">
-                <string>Name</string>
+            <property name="numCols">
+                <number>7</number>
             </property>
-        </column>
-        <column>
-            <property name="text">
-                <string>price</string>
-            </property>
-        </column>
-        <column>
-            <property name="text">
-                <string>sumePrice</string>
-            </property>
-        </column>
-        <property name="name">
-            <cstring>table</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>11</x>
-                <y>75</y>
-                <width>750</width>
-                <height>370</height>
-            </rect>
-        </property>
-        <property name="margin">
-            <number>2</number>
-        </property>
-        <property name="midLineWidth">
-            <number>3</number>
-        </property>
-        <property name="resizePolicy">
-            <enum>AutoOneFit</enum>
-        </property>
-        <property name="numRows">
-            <number>3</number>
-        </property>
-        <property name="numCols">
-            <number>4</number>
-        </property>
-    </widget>
-    <widget class="QLayoutWidget">
-        <property name="name">
-            <cstring>layout2</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>10</x>
-                <y>560</y>
-                <width>750</width>
-                <height>36</height>
-            </rect>
-        </property>
-        <hbox>
+        </widget>
+        <widget class="QLayoutWidget" row="4" column="0" rowspan="1" colspan="4">
             <property name="name">
-                <cstring>unnamed</cstring>
+                <cstring>layout5</cstring>
             </property>
-            <widget class="KPushButton">
+            <hbox>
                 <property name="name">
-                    <cstring>kPBNew</cstring>
+                    <cstring>unnamed</cstring>
                 </property>
-                <property name="text">
-                    <string>&amp;New</string>
-                </property>
-            </widget>
-            <widget class="KPushButton">
-                <property name="name">
-                    <cstring>kPBEdit</cstring>
-                </property>
-                <property name="text">
-                    <string>&amp;Edit</string>
-                </property>
-            </widget>
-            <widget class="KPushButton">
-                <property name="name">
-                    <cstring>kPBDelete</cstring>
-                </property>
-                <property name="text">
-                    <string>&amp;Delete</string>
-                </property>
-            </widget>
-            <widget class="KPushButton">
-                <property name="name">
-                    <cstring>kPBPrint</cstring>
-                </property>
-                <property name="text">
-                    <string>&amp;Print</string>
-                </property>
-            </widget>
-        </hbox>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabel3_2</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>30</x>
-                <y>450</y>
-                <width>37</width>
-                <height>21</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>Sum:</string>
-        </property>
-    </widget>
-    <widget class="KTextEdit">
-        <property name="name">
-            <cstring>kTEDescription</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>420</x>
-                <y>450</y>
-                <width>254</width>
-                <height>86</height>
-            </rect>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabel5</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>330</x>
-                <y>450</y>
-                <width>79</width>
-                <height>30</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string>Description:</string>
-        </property>
-    </widget>
-    <widget class="QLabel">
-        <property name="name">
-            <cstring>textLabel4</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>104</x>
-                <y>451</y>
-                <width>200</width>
-                <height>23</height>
-            </rect>
-        </property>
-        <property name="frameShape">
-            <enum>Panel</enum>
-        </property>
-        <property name="frameShadow">
-            <enum>Raised</enum>
-        </property>
-        <property name="text">
-            <string></string>
-        </property>
-    </widget>
-    <spacer>
-        <property name="name">
-            <cstring>spacer1</cstring>
-        </property>
-        <property name="orientation">
-            <enum>Vertical</enum>
-        </property>
-        <property name="sizeType">
-            <enum>Expanding</enum>
-        </property>
-        <property name="sizeHint">
-            <size>
-                <width>350</width>
-                <height>70</height>
-            </size>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>30</x>
-                <y>480</y>
-                <width>350</width>
-                <height>70</height>
-            </rect>
-        </property>
-    </spacer>
+                <widget class="KPushButton">
+                    <property name="name">
+                        <cstring>kPBNew</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;New</string>
+                    </property>
+                </widget>
+                <widget class="KPushButton">
+                    <property name="name">
+                        <cstring>kPBEdit</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Edit</string>
+                    </property>
+                </widget>
+                <widget class="KPushButton">
+                    <property name="name">
+                        <cstring>kPBDelete</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Delete</string>
+                    </property>
+                </widget>
+                <widget class="KPushButton">
+                    <property name="name">
+                        <cstring>kPBSave</cstring>
+                    </property>
+                    <property name="enabled">
+                        <bool>false</bool>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Save</string>
+                    </property>
+                </widget>
+                <widget class="KPushButton">
+                    <property name="name">
+                        <cstring>kPBPrint</cstring>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Print</string>
+                    </property>
+                </widget>
+            </hbox>
+        </widget>
+    </grid>
 </widget>
 <images>
     <image name="image0">
@@ -407,16 +369,28 @@
 </images>
 <connections>
     <connection>
+        <sender>kLEPartnerId</sender>
+        <signal>textChanged(const QString&amp;)</signal>
+        <receiver>InvoiceView</receiver>
+        <slot>PartnerIdChanged(const QString&amp;)</slot>
+    </connection>
+    <connection>
         <sender>table</sender>
         <signal>valueChanged(int,int)</signal>
         <receiver>InvoiceView</receiver>
         <slot>tableValueChanged(int,int)</slot>
     </connection>
     <connection>
-        <sender>kLEPartnerId</sender>
-        <signal>textChanged(const QString&amp;)</signal>
+        <sender>kPBGoFirst</sender>
+        <signal>clicked()</signal>
         <receiver>InvoiceView</receiver>
-        <slot>PartnerIdChanged(const QString&amp;)</slot>
+        <slot>firstClicked()</slot>
+    </connection>
+    <connection>
+        <sender>kPBGoPrev</sender>
+        <signal>clicked()</signal>
+        <receiver>InvoiceView</receiver>
+        <slot>prevClicked()</slot>
     </connection>
     <connection>
         <sender>kPBGoNext</sender>
@@ -424,22 +398,39 @@
         <receiver>InvoiceView</receiver>
         <slot>nextClicked()</slot>
     </connection>
+    <connection>
+        <sender>kPBGoLast</sender>
+        <signal>clicked()</signal>
+        <receiver>InvoiceView</receiver>
+        <slot>lastClicked()</slot>
+    </connection>
+    <connection>
+        <sender>kPBNew</sender>
+        <signal>clicked()</signal>
+        <receiver>InvoiceView</receiver>
+        <slot>newClicked()</slot>
+    </connection>
 </connections>
 <includes>
     <include location="global" impldecl="in declaration">qsqlquery.h</include>
     <include location="global" impldecl="in declaration">kdebug.h</include>
     <include location="local" impldecl="in declaration">Invoice.h</include>
+    <include location="global" impldecl="in declaration">qmap.h</include>
+    <include location="local" impldecl="in declaration">global.h</include>
+    <include location="global" impldecl="in declaration">qevent.h</include>
     <include location="local" impldecl="in implementation">invoiceview.ui.h</include>
 </includes>
 <variables>
+    <variable access="private">QMap&lt; int,InvoiceLine &gt; lines;</variable>
     <variable access="private">Invoice * invoice;</variable>
+    <variable>QMap&lt; int,InvoiceLine &gt; ::Iterator iterator;</variable>
 </variables>
 <signals>
     <signal>NextRequested(Invoice*)</signal>
-    <signal>PrevRequested()</signal>
-    <signal>LastRequested()</signal>
-    <signal>FirstRequested()</signal>
-    <signal>NewRequested()</signal>
+    <signal>PrevRequested(Invoice *)</signal>
+    <signal>LastRequested(Invoice *)</signal>
+    <signal>FirstRequested(Invoice *)</signal>
+    <signal>NewRequested(Invoice *)</signal>
     <signal>DeleteRequested()</signal>
     <signal>EditRequested()</signal>
     <signal>PrintRequested()</signal>
@@ -448,28 +439,32 @@
     <slot>PartnerIdChanged( const QString &amp; string )</slot>
     <slot>tableValueChanged( int row, int col )</slot>
     <slot>invoiceChanged( Invoice * invoice )</slot>
-    <slot>setInvoice( Invoice * inv )</slot>
+    <slot>setInvoice( Invoice inv )</slot>
     <slot>nextClicked()</slot>
     <slot>prevClicked()</slot>
     <slot>firstClicked()</slot>
     <slot>lastClicked()</slot>
+    <slot>newClicked()</slot>
 </slots>
 <functions>
     <function access="private" specifier="non virtual">init()</function>
+    <function access="private">setInvoice()</function>
+    <function access="private">enableEditing( bool b )</function>
 </functions>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
+    <includehint>kpushbutton.h</includehint>
     <includehint>klineedit.h</includehint>
     <includehint>krestrictedline.h</includehint>
+    <includehint>ktextedit.h</includehint>
     <includehint>klineedit.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
     <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>kpushbutton.h</includehint>
-    <includehint>ktextedit.h</includehint>
 </includehints>
 </UI>
