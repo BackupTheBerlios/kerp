@@ -146,13 +146,17 @@ void kerp::setupActions()
 
 void kerp::city_action()
 {
+
 	FormCity *form= new FormCity();
 	form->show();
 }
 
 void kerp::invoice_action()
 {
+	Invoice *invoice= new Invoice(1);
+
 	InvoiceView *form= new InvoiceView();
+	form->setInvoice(invoice);
 	form->show();
 }
 
