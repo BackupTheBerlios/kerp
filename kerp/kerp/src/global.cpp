@@ -1,5 +1,5 @@
 #include "global.h"
-
+#include <stdio.h>
 QString Global::toString(int i)
 {
 	char *id=new char;

@@ -418,6 +418,7 @@
     <include location="global" impldecl="in declaration">qmap.h</include>
     <include location="local" impldecl="in declaration">global.h</include>
     <include location="global" impldecl="in declaration">qevent.h</include>
+    <include location="local" impldecl="in declaration">tablekeyfilter.h</include>
     <include location="local" impldecl="in implementation">invoiceview.ui.h</include>
 </includes>
 <variables>

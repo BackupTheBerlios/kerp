@@ -16,6 +16,8 @@ void InvoiceView::init()
     kLEPartnerId->setEnabled(false);
  //  table->setEnabled(false);
     invoice = new Invoice();
+    TableKeys *keyFilter= new TableKeys();
+    table->installEventFilter(keyFilter);
      
 }
 

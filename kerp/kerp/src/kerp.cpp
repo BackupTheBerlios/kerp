@@ -154,8 +154,8 @@ void kerp::setupActions()
 void kerp::city_action()
 {
 
-	//FormCity *form= new FormCity();
-	//form->show();
+	FormCity *form= new FormCity();
+	form->show();
 }
 
 void kerp::invoice_action()
