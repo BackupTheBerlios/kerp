@@ -54,18 +54,18 @@ kerp.o : \
  /opt/KDE/include/kicontheme.h /opt/KDE/include/kstdguiitem.h \
  formcity.h /usr/local/qt/include/qvariant.h \
  /usr/local/qt/include/qsqlrecord.h /usr/local/qt/include/qsqlfield.h \
- /usr/local/qt/include/qdragobject.h /usr/local/qt/include/qimage.h \
- /opt/KDE/include/kprinter.h /usr/local/qt/include/qprinter.h \
+ invoiceview.h /usr/local/qt/include/qsqlquery.h \
+ /usr/local/qt/include/qsqlerror.h /usr/local/qt/include/qdragobject.h \
+ /usr/local/qt/include/qimage.h /opt/KDE/include/kprinter.h \
+ /usr/local/qt/include/qprinter.h \
  /opt/KDE/include/kdeprint/kpreloadobject.h \
  /usr/local/qt/include/qpainter.h /usr/local/qt/include/qpen.h \
  /usr/local/qt/include/qpointarray.h /usr/local/qt/include/qwmatrix.h \
  /usr/local/qt/include/qpaintdevicemetrics.h \
- /usr/local/qt/include/qsqldatabase.h \
- /usr/local/qt/include/qsqlquery.h /usr/local/qt/include/qsqlerror.h \
- /opt/KDE/include/klocale.h /opt/KDE/include/kiconloader.h \
- /usr/local/qt/include/qmovie.h /opt/KDE/include/kmenubar.h \
- /usr/local/qt/include/qmenubar.h /usr/local/qt/include/qpopupmenu.h \
- /usr/local/qt/include/qmenudata.h \
+ /usr/local/qt/include/qsqldatabase.h /opt/KDE/include/klocale.h \
+ /opt/KDE/include/kiconloader.h /usr/local/qt/include/qmovie.h \
+ /opt/KDE/include/kmenubar.h /usr/local/qt/include/qmenubar.h \
+ /usr/local/qt/include/qpopupmenu.h /usr/local/qt/include/qmenudata.h \
  /usr/local/qt/include/qkeysequence.h /usr/local/qt/include/qsignal.h \
  /opt/KDE/include/kstatusbar.h /usr/local/qt/include/qstatusbar.h \
  /usr/local/qt/include/qintdict.h /usr/local/qt/include/qlabel.h \
@@ -203,6 +203,9 @@ formcity.h :
 /usr/local/qt/include/qvariant.h :
 /usr/local/qt/include/qsqlrecord.h :
 /usr/local/qt/include/qsqlfield.h :
+invoiceview.h :
+/usr/local/qt/include/qsqlquery.h :
+/usr/local/qt/include/qsqlerror.h :
 /usr/local/qt/include/qdragobject.h :
 /usr/local/qt/include/qimage.h :
 /opt/KDE/include/kprinter.h :
@@ -214,8 +217,6 @@ formcity.h :
 /usr/local/qt/include/qwmatrix.h :
 /usr/local/qt/include/qpaintdevicemetrics.h :
 /usr/local/qt/include/qsqldatabase.h :
-/usr/local/qt/include/qsqlquery.h :
-/usr/local/qt/include/qsqlerror.h :
 /opt/KDE/include/klocale.h :
 /opt/KDE/include/kiconloader.h :
 /usr/local/qt/include/qmovie.h :

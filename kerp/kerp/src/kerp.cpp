@@ -6,7 +6,7 @@
 #include "pref.h"
 
 #include "formcity.h"
-
+#include "invoiceview.h"
 #include <qdragobject.h>
 #include <kprinter.h>
 #include <qpainter.h>
@@ -80,7 +80,7 @@ bool kerp::createConnection()
     defaultDB->setPassword( " " );
     defaultDB->setHostName( "laico" );
     if ( ! defaultDB->open() ) {
-        qWarning( "Failed to open books database: " +
+        qWarning( "Failed to open database: " +
                   defaultDB->lastError().driverText() );
         qWarning( defaultDB->lastError().databaseText() );
         return FALSE;
@@ -137,12 +137,22 @@ void kerp::setupActions()
     KAction *city_action = new KAction(i18n("&City/province"), 0,
                                   this, SLOT(city_action()),
                                   actionCollection(), "city_action");
+    KAction *invoice_action=new KAction(i18n("&Invoice"),0,
+    					this,SLOT(invoice_action()),
+					actionCollection(),"invoice_action");
     createGUI();
 }
+//My menu actions
 
 void kerp::city_action()
 {
 	FormCity *form= new FormCity();
+	form->show();
+}
+
+void kerp::invoice_action()
+{
+	InvoiceView *form= new InvoiceView();
 	form->show();
 }
 

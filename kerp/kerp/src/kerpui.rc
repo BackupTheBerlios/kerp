@@ -4,5 +4,8 @@
   <Menu name="city_action"><text>Extra</text>
     <Action name="city_action" />
   </Menu>
+  <Menu name="Invoice"><text>Invoicing</text>
+  	<Action name="invoice_action"/>
+  <Menu>
 </MenuBar>
 </kpartgui>

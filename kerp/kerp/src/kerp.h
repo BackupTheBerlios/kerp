@@ -84,6 +84,7 @@ private slots:
     void changeCaption(const QString& text);
 
     void city_action();
+    void invoice_action();
 private:
     void setupAccel();
     void setupActions();
