@@ -5,10 +5,13 @@
 #include "kerp.h"
 #include "pref.h"
 
+#include "formcity.h"
+
 #include <qdragobject.h>
 #include <kprinter.h>
 #include <qpainter.h>
 #include <qpaintdevicemetrics.h>
+#include <qsqldatabase.h>
 
 #include <kglobal.h>
 #include <klocale.h>
@@ -56,12 +59,36 @@ kerp::kerp()
             this,   SLOT(changeStatusbar(const QString&)));
     connect(m_view, SIGNAL(signalChangeCaption(const QString&)),
             this,   SLOT(changeCaption(const QString&)));
+    createConnection();
 
 }
 
 kerp::~kerp()
 {
 }
+
+bool kerp::createConnection()
+{
+// create the default database connection
+    QSqlDatabase *defaultDB = QSqlDatabase::addDatabase( "QPSQL7" );
+    if ( ! defaultDB ) {
+        qWarning( "Failed to connect to driver" );
+        return FALSE;
+    }
+    defaultDB->setDatabaseName( "qtdb" );
+    defaultDB->setUserName( "postgres" );
+    defaultDB->setPassword( " " );
+    defaultDB->setHostName( "laico" );
+    if ( ! defaultDB->open() ) {
+        qWarning( "Failed to open books database: " +
+                  defaultDB->lastError().driverText() );
+        qWarning( defaultDB->lastError().databaseText() );
+        return FALSE;
+    }
+
+    return TRUE;
+}
+
 
 void kerp::load(const KURL& url)
 {
@@ -107,10 +134,16 @@ void kerp::setupActions()
 
     // this doesn't do anything useful.  it's just here to illustrate
     // how to insert a custom menu and menu item
-    KAction *custom = new KAction(i18n("Cus&tom Menuitem"), 0,
-                                  this, SLOT(optionsPreferences()),
-                                  actionCollection(), "custom_action");
+    KAction *city_action = new KAction(i18n("&City/province"), 0,
+                                  this, SLOT(city_action()),
+                                  actionCollection(), "city_action");
     createGUI();
+}
+
+void kerp::city_action()
+{
+	FormCity *form= new FormCity();
+	form->show();
 }
 
 void kerp::saveProperties(KConfig *config)

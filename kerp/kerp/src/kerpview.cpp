@@ -6,7 +6,7 @@
 
 #include <qpainter.h>
 #include <qlayout.h>
-
+#include <qsqldatabase.h>
 #include <kurl.h>
 
 #include <ktrader.h>

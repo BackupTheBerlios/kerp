@@ -1,8 +1,8 @@
 <!DOCTYPE kpartgui SYSTEM "kpartgui.dtd">
 <kpartgui name="kerp" version="1">
 <MenuBar>
-  <Menu name="custom"><text>C&amp;ustom</text>
-    <Action name="custom_action" />
+  <Menu name="city_action"><text>Extra</text>
+    <Action name="city_action" />
   </Menu>
 </MenuBar>
 </kpartgui>

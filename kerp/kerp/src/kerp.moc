@@ -1,8 +1,8 @@
 /****************************************************************************
 ** kerp meta object code from reading C++ file 'kerp.h'
 **
-** Created: Tue May 27 12:14:13 2003
-**      by: The Qt MOC ($Id: kerp.moc,v 1.1 2003/05/31 05:43:03 arashb Exp $)
+** Created: Sun Jun 1 10:44:51 2003
+**      by: The Qt MOC ($Id: kerp.moc,v 1.2 2003/06/01 07:47:34 arashb Exp $)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -71,6 +71,7 @@ QMetaObject* kerp::staticMetaObject()
 	{ "text", &static_QUType_QString, 0, QUParameter::In }
     };
     static const QUMethod slot_12 = {"changeCaption", 1, param_slot_12 };
+    static const QUMethod slot_13 = {"city_action", 0, 0 };
     static const QMetaData slot_tbl[] = {
 	{ "fileNew()", &slot_0, QMetaData::Private },
 	{ "fileOpen()", &slot_1, QMetaData::Private },
@@ -84,11 +85,12 @@ QMetaObject* kerp::staticMetaObject()
 	{ "optionsPreferences()", &slot_9, QMetaData::Private },
 	{ "newToolbarConfig()", &slot_10, QMetaData::Private },
 	{ "changeStatusbar(const QString&)", &slot_11, QMetaData::Private },
-	{ "changeCaption(const QString&)", &slot_12, QMetaData::Private }
+	{ "changeCaption(const QString&)", &slot_12, QMetaData::Private },
+	{ "city_action()", &slot_13, QMetaData::Private }
     };
     metaObj = QMetaObject::new_metaobject(
 	"kerp", parentObject,
-	slot_tbl, 13,
+	slot_tbl, 14,
 	0, 0,
 #ifndef QT_NO_PROPERTIES
 	0, 0,
@@ -123,6 +125,7 @@ bool kerp::qt_invoke( int _id, QUObject* _o )
     case 10: newToolbarConfig(); break;
     case 11: changeStatusbar((const QString&)static_QUType_QString.get(_o+1)); break;
     case 12: changeCaption((const QString&)static_QUType_QString.get(_o+1)); break;
+    case 13: city_action(); break;
     default:
 	return KMainWindow::qt_invoke( _id, _o );
     }

@@ -6,7 +6,7 @@
 **
 *****************************************************************************/
 
-#include "/home/ab/kerp/src/kerpiface.h"
+#include "/home/ab/projecs/kerp/kerp/src/kerpiface.h"
 
 #include <kdatastream.h>
 

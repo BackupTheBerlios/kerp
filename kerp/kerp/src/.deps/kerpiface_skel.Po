@@ -1,5 +1,6 @@
 kerpiface_skel.o : \
- kerpiface_skel.cpp /home/ab/kerp/src/kerpiface.h \
+ kerpiface_skel.cpp \
+ /home/ab/projecs/kerp/kerp/src/kerpiface.h \
  /opt/KDE/include/dcopobject.h /usr/local/qt/include/qobject.h \
  /usr/local/qt/include/qobjectdefs.h /usr/local/qt/include/qglobal.h \
  /usr/local/qt/include/qconfig.h /usr/local/qt/include/qmodules.h \
@@ -27,7 +28,7 @@ kerpiface_skel.o : \
  /usr/local/qt/include/qptrlist.h /usr/local/qt/include/qglist.h \
  /usr/local/qt/include/qptrcollection.h /opt/KDE/include/kdatastream.h
 kerpiface_skel.cpp :
-/home/ab/kerp/src/kerpiface.h :
+/home/ab/projecs/kerp/kerp/src/kerpiface.h :
 /opt/KDE/include/dcopobject.h :
 /usr/local/qt/include/qobject.h :
 /usr/local/qt/include/qobjectdefs.h :

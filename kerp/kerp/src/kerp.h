@@ -83,9 +83,11 @@ private slots:
     void changeStatusbar(const QString& text);
     void changeCaption(const QString& text);
 
+    void city_action();
 private:
     void setupAccel();
     void setupActions();
+    bool createConnection();
 
 private:
     kerpView *m_view;

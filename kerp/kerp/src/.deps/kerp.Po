@@ -52,40 +52,44 @@ kerp.o : \
  /usr/local/qt/include/qscrollbar.h \
  /usr/local/qt/include/qrangecontrol.h /opt/KDE/include/kguiitem.h \
  /opt/KDE/include/kicontheme.h /opt/KDE/include/kstdguiitem.h \
+ formcity.h /usr/local/qt/include/qvariant.h \
+ /usr/local/qt/include/qsqlrecord.h /usr/local/qt/include/qsqlfield.h \
  /usr/local/qt/include/qdragobject.h /usr/local/qt/include/qimage.h \
  /opt/KDE/include/kprinter.h /usr/local/qt/include/qprinter.h \
  /opt/KDE/include/kdeprint/kpreloadobject.h \
  /usr/local/qt/include/qpainter.h /usr/local/qt/include/qpen.h \
  /usr/local/qt/include/qpointarray.h /usr/local/qt/include/qwmatrix.h \
  /usr/local/qt/include/qpaintdevicemetrics.h \
+ /usr/local/qt/include/qsqldatabase.h \
+ /usr/local/qt/include/qsqlquery.h /usr/local/qt/include/qsqlerror.h \
  /opt/KDE/include/klocale.h /opt/KDE/include/kiconloader.h \
  /usr/local/qt/include/qmovie.h /opt/KDE/include/kmenubar.h \
  /usr/local/qt/include/qmenubar.h /usr/local/qt/include/qpopupmenu.h \
  /usr/local/qt/include/qmenudata.h \
  /usr/local/qt/include/qkeysequence.h /usr/local/qt/include/qsignal.h \
- /usr/local/qt/include/qvariant.h /opt/KDE/include/kstatusbar.h \
- /usr/local/qt/include/qstatusbar.h /usr/local/qt/include/qintdict.h \
- /usr/local/qt/include/qlabel.h /opt/KDE/include/kkeydialog.h \
- /usr/local/qt/include/qdict.h /opt/KDE/include/klistview.h \
- /usr/local/qt/include/qlistview.h /opt/KDE/include/kaccel.h \
- /usr/local/qt/include/qaccel.h /opt/KDE/include/kshortcut.h \
- /opt/KDE/include/kstdaccel.h /opt/KDE/include/kio/netaccess.h \
- /opt/KDE/include/kio/global.h /usr/local/qt/include/qdatetime.h \
- /opt/KDE/include/kfiledialog.h /opt/KDE/include/kfile.h \
- /usr/local/qt/include/qdir.h /usr/local/qt/include/qfileinfo.h \
- /usr/local/qt/include/qfile.h /opt/KDE/include/kmimetype.h \
- /usr/include/sys/types.h /usr/include/time.h /usr/include/endian.h \
- /usr/include/bits/endian.h /usr/include/sys/select.h \
- /usr/include/bits/select.h /usr/include/bits/sigset.h \
- /usr/include/bits/time.h /usr/include/sys/sysmacros.h \
- /usr/include/sys/stat.h /usr/include/bits/stat.h \
- /opt/KDE/include/ksycocatype.h /opt/KDE/include/kservicetype.h \
- /opt/KDE/include/ksycocaentry.h /opt/KDE/include/ksharedptr.h \
- /opt/KDE/include/kservice.h /opt/KDE/include/ksimpleconfig.h \
- /opt/KDE/include/kconfig.h /opt/KDE/include/kconfigbase.h \
- /opt/KDE/include/kconfigdata.h /opt/KDE/include/kio/jobclasses.h \
- /opt/KDE/include/kurlrequesterdlg.h /opt/KDE/include/kedittoolbar.h \
- /opt/KDE/include/kaction.h /opt/KDE/include/kstdaction.h kerp.moc \
+ /opt/KDE/include/kstatusbar.h /usr/local/qt/include/qstatusbar.h \
+ /usr/local/qt/include/qintdict.h /usr/local/qt/include/qlabel.h \
+ /opt/KDE/include/kkeydialog.h /usr/local/qt/include/qdict.h \
+ /opt/KDE/include/klistview.h /usr/local/qt/include/qlistview.h \
+ /opt/KDE/include/kaccel.h /usr/local/qt/include/qaccel.h \
+ /opt/KDE/include/kshortcut.h /opt/KDE/include/kstdaccel.h \
+ /opt/KDE/include/kio/netaccess.h /opt/KDE/include/kio/global.h \
+ /usr/local/qt/include/qdatetime.h /opt/KDE/include/kfiledialog.h \
+ /opt/KDE/include/kfile.h /usr/local/qt/include/qdir.h \
+ /usr/local/qt/include/qfileinfo.h /usr/local/qt/include/qfile.h \
+ /opt/KDE/include/kmimetype.h /usr/include/sys/types.h \
+ /usr/include/time.h /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/sys/select.h /usr/include/bits/select.h \
+ /usr/include/bits/sigset.h /usr/include/bits/time.h \
+ /usr/include/sys/sysmacros.h /usr/include/sys/stat.h \
+ /usr/include/bits/stat.h /opt/KDE/include/ksycocatype.h \
+ /opt/KDE/include/kservicetype.h /opt/KDE/include/ksycocaentry.h \
+ /opt/KDE/include/ksharedptr.h /opt/KDE/include/kservice.h \
+ /opt/KDE/include/ksimpleconfig.h /opt/KDE/include/kconfig.h \
+ /opt/KDE/include/kconfigbase.h /opt/KDE/include/kconfigdata.h \
+ /opt/KDE/include/kio/jobclasses.h /opt/KDE/include/kurlrequesterdlg.h \
+ /opt/KDE/include/kedittoolbar.h /opt/KDE/include/kaction.h \
+ /opt/KDE/include/kstdaction.h kerp.moc \
  /usr/local/qt/include/qmetaobject.h \
  /usr/local/qt/include/qconnection.h \
  /usr/local/qt/include/private/qucomextra_p.h \
@@ -195,6 +199,10 @@ pref.h :
 /opt/KDE/include/kguiitem.h :
 /opt/KDE/include/kicontheme.h :
 /opt/KDE/include/kstdguiitem.h :
+formcity.h :
+/usr/local/qt/include/qvariant.h :
+/usr/local/qt/include/qsqlrecord.h :
+/usr/local/qt/include/qsqlfield.h :
 /usr/local/qt/include/qdragobject.h :
 /usr/local/qt/include/qimage.h :
 /opt/KDE/include/kprinter.h :
@@ -205,6 +213,9 @@ pref.h :
 /usr/local/qt/include/qpointarray.h :
 /usr/local/qt/include/qwmatrix.h :
 /usr/local/qt/include/qpaintdevicemetrics.h :
+/usr/local/qt/include/qsqldatabase.h :
+/usr/local/qt/include/qsqlquery.h :
+/usr/local/qt/include/qsqlerror.h :
 /opt/KDE/include/klocale.h :
 /opt/KDE/include/kiconloader.h :
 /usr/local/qt/include/qmovie.h :
@@ -214,7 +225,6 @@ pref.h :
 /usr/local/qt/include/qmenudata.h :
 /usr/local/qt/include/qkeysequence.h :
 /usr/local/qt/include/qsignal.h :
-/usr/local/qt/include/qvariant.h :
 /opt/KDE/include/kstatusbar.h :
 /usr/local/qt/include/qstatusbar.h :
 /usr/local/qt/include/qintdict.h :

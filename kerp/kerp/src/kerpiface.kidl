@@ -1,5 +1,5 @@
 <!DOCTYPE DCOP-IDL><DCOP-IDL>
-<SOURCE>/home/ab/kerp/src/kerpiface.h</SOURCE>
+<SOURCE>/home/ab/projecs/kerp/kerp/src/kerpiface.h</SOURCE>
 <INCLUDE>dcopobject.h</INCLUDE>
 <CLASS>
     <NAME>kerpIface</NAME>
