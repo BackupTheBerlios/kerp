@@ -1,0 +1,8 @@
+<!DOCTYPE DCOP-IDL><DCOP-IDL>
+<SOURCE>/home/ab/kerp/src/kerpiface.h</SOURCE>
+<INCLUDE>dcopobject.h</INCLUDE>
+<CLASS>
+    <NAME>kerpIface</NAME>
+    <SUPER>DCOPObject</SUPER>
+</CLASS>
+</DCOP-IDL>

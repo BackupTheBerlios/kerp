@@ -1,0 +1,256 @@
+/****************************************************************************
+** kerpPreferences meta object code from reading C++ file 'pref.h'
+**
+** Created: Tue May 27 12:14:33 2003
+**      by: The Qt MOC ($Id: pref.moc,v 1.1 2003/05/31 05:43:03 arashb Exp $)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#undef QT_NO_COMPAT
+#include "pref.h"
+#include <qmetaobject.h>
+#include <qapplication.h>
+
+#include <private/qucomextra_p.h>
+#if !defined(Q_MOC_OUTPUT_REVISION) || (Q_MOC_OUTPUT_REVISION != 26)
+#error "This file was generated using the moc from 3.1.0. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+const char *kerpPreferences::className() const
+{
+    return "kerpPreferences";
+}
+
+QMetaObject *kerpPreferences::metaObj = 0;
+static QMetaObjectCleanUp cleanUp_kerpPreferences( "kerpPreferences", &kerpPreferences::staticMetaObject );
+
+#ifndef QT_NO_TRANSLATION
+QString kerpPreferences::tr( const char *s, const char *c )
+{
+    if ( qApp )
+	return qApp->translate( "kerpPreferences", s, c, QApplication::DefaultCodec );
+    else
+	return QString::fromLatin1( s );
+}
+#ifndef QT_NO_TRANSLATION_UTF8
+QString kerpPreferences::trUtf8( const char *s, const char *c )
+{
+    if ( qApp )
+	return qApp->translate( "kerpPreferences", s, c, QApplication::UnicodeUTF8 );
+    else
+	return QString::fromUtf8( s );
+}
+#endif // QT_NO_TRANSLATION_UTF8
+
+#endif // QT_NO_TRANSLATION
+
+QMetaObject* kerpPreferences::staticMetaObject()
+{
+    if ( metaObj )
+	return metaObj;
+    QMetaObject* parentObject = KDialogBase::staticMetaObject();
+    metaObj = QMetaObject::new_metaobject(
+	"kerpPreferences", parentObject,
+	0, 0,
+	0, 0,
+#ifndef QT_NO_PROPERTIES
+	0, 0,
+	0, 0,
+	kerpPreferences::qt_static_property,
+#endif // QT_NO_PROPERTIES
+	0, 0 );
+    cleanUp_kerpPreferences.setMetaObject( metaObj );
+    return metaObj;
+}
+
+void* kerpPreferences::qt_cast( const char* clname )
+{
+    if ( !qstrcmp( clname, "kerpPreferences" ) )
+	return this;
+    return KDialogBase::qt_cast( clname );
+}
+
+bool kerpPreferences::qt_invoke( int _id, QUObject* _o )
+{
+    return KDialogBase::qt_invoke(_id,_o);
+}
+
+bool kerpPreferences::qt_emit( int _id, QUObject* _o )
+{
+    return KDialogBase::qt_emit(_id,_o);
+}
+#ifndef QT_NO_PROPERTIES
+
+bool kerpPreferences::qt_property( int id, int f, QVariant* v)
+{
+    if ( id >= staticMetaObject()->propertyOffset() )
+	return qt_static_property(this, id, f, v);
+    return KDialogBase::qt_property( id, f, v );
+}
+
+bool kerpPreferences::qt_static_property( QObject* oo, int id, int f, QVariant* v)
+{
+    return KDialogBase::staticMetaObject()->qt_static_property( oo, id, f, v);
+}
+#endif // QT_NO_PROPERTIES
+
+
+const char *kerpPrefPageOne::className() const
+{
+    return "kerpPrefPageOne";
+}
+
+QMetaObject *kerpPrefPageOne::metaObj = 0;
+static QMetaObjectCleanUp cleanUp_kerpPrefPageOne( "kerpPrefPageOne", &kerpPrefPageOne::staticMetaObject );
+
+#ifndef QT_NO_TRANSLATION
+QString kerpPrefPageOne::tr( const char *s, const char *c )
+{
+    if ( qApp )
+	return qApp->translate( "kerpPrefPageOne", s, c, QApplication::DefaultCodec );
+    else
+	return QString::fromLatin1( s );
+}
+#ifndef QT_NO_TRANSLATION_UTF8
+QString kerpPrefPageOne::trUtf8( const char *s, const char *c )
+{
+    if ( qApp )
+	return qApp->translate( "kerpPrefPageOne", s, c, QApplication::UnicodeUTF8 );
+    else
+	return QString::fromUtf8( s );
+}
+#endif // QT_NO_TRANSLATION_UTF8
+
+#endif // QT_NO_TRANSLATION
+
+QMetaObject* kerpPrefPageOne::staticMetaObject()
+{
+    if ( metaObj )
+	return metaObj;
+    QMetaObject* parentObject = QFrame::staticMetaObject();
+    metaObj = QMetaObject::new_metaobject(
+	"kerpPrefPageOne", parentObject,
+	0, 0,
+	0, 0,
+#ifndef QT_NO_PROPERTIES
+	0, 0,
+	0, 0,
+	kerpPrefPageOne::qt_static_property,
+#endif // QT_NO_PROPERTIES
+	0, 0 );
+    cleanUp_kerpPrefPageOne.setMetaObject( metaObj );
+    return metaObj;
+}
+
+void* kerpPrefPageOne::qt_cast( const char* clname )
+{
+    if ( !qstrcmp( clname, "kerpPrefPageOne" ) )
+	return this;
+    return QFrame::qt_cast( clname );
+}
+
+bool kerpPrefPageOne::qt_invoke( int _id, QUObject* _o )
+{
+    return QFrame::qt_invoke(_id,_o);
+}
+
+bool kerpPrefPageOne::qt_emit( int _id, QUObject* _o )
+{
+    return QFrame::qt_emit(_id,_o);
+}
+#ifndef QT_NO_PROPERTIES
+
+bool kerpPrefPageOne::qt_property( int id, int f, QVariant* v)
+{
+    if ( id >= staticMetaObject()->propertyOffset() )
+	return qt_static_property(this, id, f, v);
+    return QFrame::qt_property( id, f, v );
+}
+
+bool kerpPrefPageOne::qt_static_property( QObject* oo, int id, int f, QVariant* v)
+{
+    return QFrame::staticMetaObject()->qt_static_property( oo, id, f, v);
+}
+#endif // QT_NO_PROPERTIES
+
+
+const char *kerpPrefPageTwo::className() const
+{
+    return "kerpPrefPageTwo";
+}
+
+QMetaObject *kerpPrefPageTwo::metaObj = 0;
+static QMetaObjectCleanUp cleanUp_kerpPrefPageTwo( "kerpPrefPageTwo", &kerpPrefPageTwo::staticMetaObject );
+
+#ifndef QT_NO_TRANSLATION
+QString kerpPrefPageTwo::tr( const char *s, const char *c )
+{
+    if ( qApp )
+	return qApp->translate( "kerpPrefPageTwo", s, c, QApplication::DefaultCodec );
+    else
+	return QString::fromLatin1( s );
+}
+#ifndef QT_NO_TRANSLATION_UTF8
+QString kerpPrefPageTwo::trUtf8( const char *s, const char *c )
+{
+    if ( qApp )
+	return qApp->translate( "kerpPrefPageTwo", s, c, QApplication::UnicodeUTF8 );
+    else
+	return QString::fromUtf8( s );
+}
+#endif // QT_NO_TRANSLATION_UTF8
+
+#endif // QT_NO_TRANSLATION
+
+QMetaObject* kerpPrefPageTwo::staticMetaObject()
+{
+    if ( metaObj )
+	return metaObj;
+    QMetaObject* parentObject = QFrame::staticMetaObject();
+    metaObj = QMetaObject::new_metaobject(
+	"kerpPrefPageTwo", parentObject,
+	0, 0,
+	0, 0,
+#ifndef QT_NO_PROPERTIES
+	0, 0,
+	0, 0,
+	kerpPrefPageTwo::qt_static_property,
+#endif // QT_NO_PROPERTIES
+	0, 0 );
+    cleanUp_kerpPrefPageTwo.setMetaObject( metaObj );
+    return metaObj;
+}
+
+void* kerpPrefPageTwo::qt_cast( const char* clname )
+{
+    if ( !qstrcmp( clname, "kerpPrefPageTwo" ) )
+	return this;
+    return QFrame::qt_cast( clname );
+}
+
+bool kerpPrefPageTwo::qt_invoke( int _id, QUObject* _o )
+{
+    return QFrame::qt_invoke(_id,_o);
+}
+
+bool kerpPrefPageTwo::qt_emit( int _id, QUObject* _o )
+{
+    return QFrame::qt_emit(_id,_o);
+}
+#ifndef QT_NO_PROPERTIES
+
+bool kerpPrefPageTwo::qt_property( int id, int f, QVariant* v)
+{
+    if ( id >= staticMetaObject()->propertyOffset() )
+	return qt_static_property(this, id, f, v);
+    return QFrame::qt_property( id, f, v );
+}
+
+bool kerpPrefPageTwo::qt_static_property( QObject* oo, int id, int f, QVariant* v)
+{
+    return QFrame::staticMetaObject()->qt_static_property( oo, id, f, v);
+}
+#endif // QT_NO_PROPERTIES

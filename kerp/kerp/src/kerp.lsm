@@ -1,0 +1,16 @@
+Begin3
+Title:          kerp -- Some description
+Version:        0.1
+Entered-date:   
+Description:    
+Keywords:       KDE Qt
+Author:         Arash Bijanzadeh <a.bijanzadeh@linuxiran.org>
+Maintained-by:  Arash Bijanzadeh <a.bijanzadeh@linuxiran.org>
+Home-page:      
+Alternate-site: 
+Primary-site:   ftp://ftp.kde.org/pub/kde/unstable/apps/utils
+                xxxxxx  kerp-0.1.tar.gz
+                xxx     kerp-0.1.lsm
+Platform:       Linux. Needs KDE
+Copying-policy: GPL
+End
