@@ -12,10 +12,14 @@
 #define _INVOICE_H_
  #include <qstring.h>
 //#include   <qobject.h>
+#include <qmap.h>
+
+#include "invoiceline.h"
 
  class Invoice //:public QObject
  {
  //	Q_OBJECT
+	typedef QMap< int,InvoiceLine > InvoiceLineMap;
 
 	public :
 		Invoice() ;
@@ -28,8 +32,11 @@
 		QString getInvoice_id() const;
 		void setInvoice_id(QString);
 
+		QMap< int,InvoiceLine > getLines();
+
 		int getId() const;
 private:
+	InvoiceLineMap lines;
 	QString customer_id;
 	QString invoice_id;
 	int id;
