@@ -1,6 +1,6 @@
 Drop table partner;
 create table partner(
-id char(8) not null primary key,
+id serial not null primary key,
 name varchar (64),
 surename varchar(64),
 city integer references city ,
